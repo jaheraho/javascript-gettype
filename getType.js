@@ -9,7 +9,7 @@ function getType(val) {
         return 'error'
     } else if (!!(val && val.constructor && val.call && val.apply)) {
         return 'function';
-    } else if (!val && val !== false && typeof val !== 'undefined') {
+    } else if (!val && val !== 0 && val !== false && val !== '' && typeof val !== 'undefined') {
         return 'null';
     } else if (typeof val === 'number' && parseInt(val) !== val) {
         return 'float';
