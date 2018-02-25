@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<body>
+<pre id="output"></pre>
+<script src="getType.js"></script>
+<script>
+    var undef;
+    var arr = [
+        'hello github',
+        1337,
+        false,
+        1.2,
+        {},
+        [1, 2],
+        null,
+        undef,
+        new RegExp('0-9'),
+        function(){},
+        new Date('2013-04-09'),
+        new Error('something is wrong here!')
+    ];
+
+document.getElementById('output').innerHTML=arr.map(function(cur){return cur + ' => ' + getType(cur);}).join('<br><br>');
+
+/*
+OUTPUT WILL BE:
+
+hello github => string
+
+1337 => number
+
+false => boolean
+
+1.2 => float
+
+[object Object] => object
+
+1,2 => array
+
+null => null
+
+undefined => undefined
+
+/0-9/ => regexp
+
+function (){} => function
+
+Tue Apr 09 2013 02:00:00 GMT+0200 (Mitteleuropäische Sommerzeit) => date
+
+Error: something is wrong here! => error
+ */
+
+</script>
+</body>
+</html>
